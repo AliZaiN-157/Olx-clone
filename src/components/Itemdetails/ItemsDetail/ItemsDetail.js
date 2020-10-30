@@ -1,18 +1,17 @@
 import React from 'react'
 import './ItemDetail.css'
-import Bike_img from '../../../Images/Bike.jpg'
 import ShareIcon from '@material-ui/icons/Share';
 import FavoriteBorderIcon from '@material-ui/icons/FavoriteBorder';
 import { Avatar, IconButton } from '@material-ui/core';
 import PhoneIcon from '@material-ui/icons/Phone';
 
 
-function ItemsDetail() {
+function ItemsDetail({ image, name, location, description, price, timestamp, userImg, userName }) {
 
     return (
         <div className="Items__details">
             <div className="Items__image">
-                <img src={Bike_img} />
+                <img src={image} />
             </div>
             <div className="Items__detail">
                 <h1>
@@ -20,8 +19,8 @@ function ItemsDetail() {
                 </h1>
                 <div className="detail">
                     <h1>
-                        Rs 35000 <br />
-                        <span className="detail__title">Unique Bike</span>
+                        Rs {price} <br />
+                        <span className="detail__title">{name}</span>
 
                     </h1>
                     <div className="detail__icons">
@@ -33,14 +32,15 @@ function ItemsDetail() {
                         </IconButton>
                     </div>
                 </div>
-                <span className="detail__location">location</span>
-                <span className="detail__timestamp">timestamp</span>
+                <span className="detail__location">{location}</span>
+                <span className="detail__timestamp">{new Date(timestamp?.toDate()).toDateString()}
+                </span>
             </div>
             <div className="Items__owner">
                 <div className="Owners__details">
                     <div className="Owners__identity">
-                        <Avatar />
-                        <h2>Owners Name</h2>
+                        <Avatar src={userImg} />
+                        <h2>{userName}</h2>
                     </div>
                     <div className="Owners_num">
                         <span> <PhoneIcon /> 03** *** ****</span>
@@ -52,7 +52,7 @@ function ItemsDetail() {
                     Description
                 </h1>
                 <p>
-                    description
+                    {description}
                 </p>
             </div>
 

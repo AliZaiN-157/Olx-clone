@@ -8,7 +8,9 @@ function Cards({ id, title, price, category, image, location, timestamp, descrip
 
     return (
         <Link className="cards" to={`/Item/${category}/${title}/${id}`}>
-            <img src={image} alt="Item-Image" className="card__img" />
+            <div className="card__image">
+                <img src={image} alt="Item-Image" className="card__img" />
+            </div>
             <div className="card__details">
                 <h3 className="card__price">
                     Rs {price}

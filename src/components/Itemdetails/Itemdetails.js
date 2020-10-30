@@ -8,27 +8,41 @@ import ItemsDetail from './ItemsDetail/ItemsDetail'
 
 
 function Itemdetails() {
-    const { id, title } = useParams();
-    console.log(id, title)
-    const [item, setItem] = useState();
+    const [items, setItems] = useState([]);
+    const { id } = useParams();
+
 
     useEffect(() => {
-        db.collection('sellitem').orderBy('timestamp', 'desc').onSnapshot((snapshot) => (
-            setItem(snapshot.docs.map((doc) => ({
-                id: doc.id,
-                data: doc.data()
-            })))
-
-        ))
-    }, []);
+        const Snapshot = db.collection("sellitem").doc(id).get()
+        Snapshot.then((snapshot) => {
+            if (snapshot.exists) {
+                const data = snapshot.data();
+                console.log("Document data:", data)
+                setItems(data)
 
 
+            } else {
+                console.log("No such document!");
+            }
+        })
+    }, [])
 
     return (
         <div className="Items__page">
             <Header />
             <Navbar />
-            <ItemsDetail />
+            {console.log(items.name)}
+            <ItemsDetail
+                name={items.name}
+                price={items.price}
+                image={items.image}
+                category={items.category}
+                description={items.description}
+                timestamp={items.timestamp}
+                userImg={items.userImg}
+                userName={items.userName}
+                location={items.location}
+            />
             <Footer />
         </div>
     )
