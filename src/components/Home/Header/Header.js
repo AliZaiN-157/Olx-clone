@@ -36,7 +36,6 @@ function Header() {
                             <SearchIcon fontSize="large" style={{ color: "white" }} />
                         </span>
                     </div>
-
                 </div>
             </div>
             <div className="header__right">
@@ -47,9 +46,11 @@ function Header() {
                         </Link>
                     ) : (
                             <>
-                                <IconButton>
-                                    <ChatBubbleOutlineIcon />
-                                </IconButton>
+                                <Link to="/chatwithseller" style={{ borderBottom: "none" }}>
+                                    <IconButton>
+                                        <ChatBubbleOutlineIcon />
+                                    </IconButton>
+                                </Link>
                                 <IconButton>
                                     <NotificationsNoneOutlinedIcon />
                                 </IconButton>

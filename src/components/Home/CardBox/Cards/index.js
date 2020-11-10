@@ -18,12 +18,14 @@ function Cards({ id, title, price, category, image, location, timestamp, descrip
                 <p className="card__title">
                     {title}
                 </p>
-                <small className="card__location">
-                    {location}
-                </small>
-                <small className="card__timestamp">
-                    {new Date(timestamp?.toDate()).toDateString()}
-                </small>
+                <div className="card__footer">
+                    <small className="card__location">
+                        {location}
+                    </small>
+                    <small className="card__timestamp">
+                        {new Date(timestamp?.toDate()).toDateString()}
+                    </small>
+                </div>
             </div>
 
         </Link>

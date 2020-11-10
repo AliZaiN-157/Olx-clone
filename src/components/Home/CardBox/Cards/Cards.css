@@ -19,11 +19,12 @@
 .card__image{
     width: 200px;
     height: 150px;
+    padding: 10px 40px 20px 40px;
+
 }
 .card__img {
     width: 200px;
     height: 150px;
-    padding: 10px 40px 20px 40px;
 }
 
 .card__details {
@@ -31,18 +32,21 @@
     padding-bottom: 10px;
     
 }
-
+.card__footer {
+    display: flex;
+    justify-content: space-between;
+    padding-top: 15px;
+    align-items: center;
+}
 .card__timestamp{
-    float: right;
-    margin-left: 60px;
+    padding-top: 10px;
     margin-right: 5px;
     font-weight: 400;
     color: #5C7A7D;
 }
 .card__location {
+    padding-top: 10px;
     margin-left: 5px;
-    margin-bottom: 20px;
-    padding-bottom: 20px;
     font-weight: 400;
     color: #5C7A7D;
 }

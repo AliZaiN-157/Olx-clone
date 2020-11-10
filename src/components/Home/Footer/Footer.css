@@ -3,11 +3,12 @@
     margin-top: 10rem;
 }
 .footer__app {
-    height: 200px;
     background-color: #F7F8F9;
     display: flex;
     flex-wrap: wrap;
     height: auto;
+    justify-content: center;
+     
 }
 .footer__app > img {
     margin-left: 50px;

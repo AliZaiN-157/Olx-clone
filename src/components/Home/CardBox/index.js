@@ -28,6 +28,7 @@ function CardBox() {
                     // console.log('data =>', sellitem[id])
                     return (
                         <Cards
+                            key={sellitems.id}
                             id={sellitems.id}
                             title={sellitems.data.name}
                             price={sellitems.data.price}

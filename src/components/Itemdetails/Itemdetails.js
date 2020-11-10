@@ -13,26 +13,18 @@ function Itemdetails() {
 
 
     useEffect(() => {
-        const Snapshot = db.collection("sellitem").doc(id).get()
-        Snapshot.then((snapshot) => {
-            if (snapshot.exists) {
-                const data = snapshot.data();
-                console.log("Document data:", data)
-                setItems(data)
-
-
-            } else {
-                console.log("No such document!");
-            }
-        })
+        db.collection("sellitem").doc(id).onSnapshot(snapshot => (
+            setItems(snapshot.data())
+        ))
     }, [])
 
     return (
         <div className="Items__page">
             <Header />
             <Navbar />
-            {console.log(items.name)}
             <ItemsDetail
+                key={id}
+                id={id}
                 name={items.name}
                 price={items.price}
                 image={items.image}

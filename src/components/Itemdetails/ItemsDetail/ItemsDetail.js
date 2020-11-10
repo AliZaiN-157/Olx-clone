@@ -4,9 +4,10 @@ import ShareIcon from '@material-ui/icons/Share';
 import FavoriteBorderIcon from '@material-ui/icons/FavoriteBorder';
 import { Avatar, IconButton } from '@material-ui/core';
 import PhoneIcon from '@material-ui/icons/Phone';
+import { Link } from 'react-router-dom';
 
 
-function ItemsDetail({ image, name, location, description, price, timestamp, userImg, userName }) {
+function ItemsDetail({ id, image, name, location, description, price, timestamp, userImg, userName }) {
 
     return (
         <div className="Items__details">
@@ -14,9 +15,9 @@ function ItemsDetail({ image, name, location, description, price, timestamp, use
                 <img src={image} />
             </div>
             <div className="Items__detail">
-                <h1>
+                <h2>
                     Details
-                </h1>
+                </h2>
                 <div className="detail">
                     <h1>
                         Rs {price} <br />
@@ -32,25 +33,37 @@ function ItemsDetail({ image, name, location, description, price, timestamp, use
                         </IconButton>
                     </div>
                 </div>
-                <span className="detail__location">{location}</span>
-                <span className="detail__timestamp">{new Date(timestamp?.toDate()).toDateString()}
-                </span>
+                <div className="detail__footer">
+                    <span className="detail__location">{location}</span>
+                    <span className="detail__timestamp">{new Date(timestamp?.toDate()).toDateString()}
+                    </span>
+                </div>
             </div>
             <div className="Items__owner">
+                <h2>Seller description</h2>
                 <div className="Owners__details">
                     <div className="Owners__identity">
                         <Avatar src={userImg} />
-                        <h2>{userName}</h2>
+                        <h3>{userName}</h3>
                     </div>
+
                     <div className="Owners_num">
-                        <span> <PhoneIcon /> 03** *** ****</span>
+                        <span> <PhoneIcon /></span>
+                        <span>03** *** ****</span>
                     </div>
+                </div>
+                <div>
+                    <Link to={`/chatwithseller/chat/${id}`}>
+                        <button className="Chat_btn">
+                            Chat with seller
+                        </button>
+                    </Link>
                 </div>
             </div>
             <div className="Items__desc">
-                <h1>
+                <h2>
                     Description
-                </h1>
+                </h2>
                 <p>
                     {description}
                 </p>

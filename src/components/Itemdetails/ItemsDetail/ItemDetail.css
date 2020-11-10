@@ -5,15 +5,17 @@
     margin-right: 30px;
     margin-top: 50px;
 }
-.detail__timestamp{
-    float: right;
-    margin-right: 30px;
+.detail__footer {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
     margin-bottom: 10px;
 }
+.detail__timestamp{
+    margin-right: 10px;
+}
 .detail__location{
-    float: left;
-    margin-left: 30px;
-    margin-bottom: 10px;
+    margin-left: 10px;
 }
 .Items__image{
     width: 100%;
@@ -49,12 +51,13 @@
     margin-right: 20px;
 }
 .detail__title{
-    font-weight: 500;
-    font-size: x-large;
+    font-weight: 400;
+    font-size: 24px;
 }
-.Items__detail > h1 {
+.Items__detail > h2 {
     text-align: center;
     font-weight: 600;
+    color: #002F34;
 }
 .Items__desc{
     width: 800px;
@@ -66,9 +69,12 @@
 .Items__desc > * {
     padding: 20px;
 }
-.Items__desc > h1 {
+.Items__desc > h2 {
     text-align: center;
     font-weight: 600;
+    margin: 10px;
+    padding: 10px;
+    color: #002F34;
 }
 .Items__owner {
     width: 450px;
@@ -78,11 +84,35 @@
     flex: 4;
     min-width: 300px;
 }
+.Items__owner > h2 {
+    font-weight: 500;
+    color: #002F34;
+    padding: 10px;
+    margin: 10px;
+}
 .Items__owner > * {
     padding: 20px;
     justify-content: center;
     align-items: center;
     text-align: center;
+}
+.Chat_btn{
+    color: white;
+    background-color: #002F34;
+    border: 5px solid #002F34;
+    text-align: center;
+    border-radius: 3px;
+    margin-top: 10px;
+    font-size: 15px;
+    font-weight: 600;
+    width: 250px;
+    height: 40px;
+    cursor: pointer;
+    outline-style: none;
+}
+.Chat_btn:hover {
+    background-color: white;
+    color: #002F34;
 }
 .Owners__details{
     display: flex;
@@ -93,20 +123,23 @@
     margin-top: 20px;
 }
 .Owners_num {
-    display: grid;
+    display: flex;
+    align-items: center;
     place-items: center;
     height: 100px;
+    
 }
 .Owners_num > span {
     font-size: larger;
 }
 .Owners__identity {
     display: flex;
-    flex-direction: column;
-    justify-content: center;
+    align-content: space-between;
     align-items: center;
 }
-.Owners__identity > h2 {
-    font-weight: 400;
+.Owners__identity > h3 {
+    font-weight: 500;
     font-size: larger;
+    color: #002F34;
+    margin-left: 15px;
 }

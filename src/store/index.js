@@ -1,9 +1,6 @@
-import { combineReducers, compose, createStore } from 'redux'
-import userReducer from './reducers/userReducer'
+import { createStore } from 'redux'
 import reducers from './reducers'
-// const AllReducer = combineReducers({
 
-// })
 
 
 

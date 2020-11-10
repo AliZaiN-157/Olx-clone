@@ -9,7 +9,8 @@ import {
   Route
 } from "react-router-dom";
 import Itemdetails from './components/Itemdetails/Itemdetails'
-
+import Chat from './components/Chat';
+import Error from './components/404/index'
 
 
 function App() {
@@ -29,9 +30,10 @@ function App() {
           <Route exact path="/" component={Home}>
             <Home />
           </Route>
-          {/* <Route exact path={`/Item/Category/title/:id`} render={(props) => {
-            return <Itemdetails {...props} />
-          }} /> */}
+          <Route exact path="/chatwithseller/chat/:id">
+            <Chat />
+          </Route>
+          <Route component={Error} />
         </Switch>
       </div>
     </Router>
